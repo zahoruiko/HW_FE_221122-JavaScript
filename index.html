@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hausaufgabe: 22.11.2022</title>
+</head>
+<body>
+    <h3>The results are output to the console</h3>
+    <script>
+        // Task 1
+        // Дан массив с числами. Найдите сумму этих чисел, используя forEach.
+        console.log("Task 1:");
+        let arr = [1, 2, 3, 4, 56, 7];
+        console.log("Source array = ", arr);
+        let sum = 0;
+        arr.forEach(item => {
+            sum = sum + item
+        });
+        console.log("Sum of the array elements = " + sum);
+
+        // Task 2
+        // Дан массив с числами. Проверьте то, что все элементы в массиве больше нуля.
+        console.log("Task 2:");
+        arr = [1, 2, -3, 4, -56, 7];
+        console.log("Source array = ", arr);
+        let result = arr.find(item => item < 0);
+        if(result === undefined) {
+            console.log("All array elements are positive");
+        } else {
+            console.log("There is a negative element(s) in the array");
+        }
+
+        // Task 3
+        //Дан массив со строками. Оставьте в нем только те строки, длина которых больше 5-ти символов.
+        console.log("Task 3:");
+        arr = ["asdfgadfg", "asfd", "asdfasdfasd", "dsfg"];
+        console.log("Source array = ", arr);
+        arr = arr.filter(item => item.length > 5);
+        console.log("Result array = ", arr);
+       
+        // Task 4 
+        // Дан массив с числами. Посчитайте количество отрицательных чисел в этом массиве.
+        console.log("Task 4:");
+        arr = [1, 2, -3, 4, -56, 7];
+        console.log("Source array = ", arr);
+        negativeElements = arr.filter(item => item < 0);
+        console.log("Number of negative elements =" + negativeElements.length);
+
+        // Task 5
+        // Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, 
+        // чтобы в сумме получилось больше 10-ти.
+        console.log("Task 5:");
+        arr = [1, 2, 3, 4, -1, 56, 7];
+        console.log("Source array = ", arr);
+        sum = 0; // переменная для расчета суммы
+        let i = 0; // переменная для счетчика элементов
+        arr.forEach(item => {
+            // если сумма меньше или равна 10, тогда надо добавить еще елемент(ы), 
+            // чтобы получить значение больше 10
+            if(sum <= 10) { 
+                i++;
+                sum = sum + item;
+            }
+        });
+        if(sum > 10) {
+            console.log("Required Items = ", i);
+        } else {
+            console.log("Unable to complete task (using elements of this array)");
+        }
+
+        // Task 6
+        // Дан массив с числами. Узнайте сколько элементов с конца массива надо сложить, 
+        // чтобы в сумме получилось больше 10-ти.
+        console.log("Task 6 (Var. 1):");
+        arr = [1, 2, 3, 4, -1, 56, 7];
+        console.log("Source array = ", arr);
+        sum = 0; // переменная для расчета суммы
+        i = 0; // переменная для счетчика элементов
+        result = arr.reduceRight((acc, item, index) => {
+            // если сумма меньше или равна 10, тогда надо добавить еще елемент(ы), 
+            // чтобы получить значение больше 10
+            if(acc <= 10) { 
+                i++;
+                acc = acc + item;
+            }
+            return acc;
+        }, 0);
+        if(result > 10) {
+            console.log("Required Items = ", i);
+        } else {
+            console.log("Unable to complete task (using elements of this array)");
+        }
+
+        console.log("Task 6 (Var. 2):");
+        arr = [1, 2, 3, 4, -1, 56, 7];
+        console.log("Source array = ", arr);
+        arr.reverse(); // Реверсируем порядок элементов массива
+        sum = 0; // переменная для расчета суммы
+        i = 0; // переменная для счетчика элементов
+        arr.forEach(item => {
+            // если сумма меньше или равна 10, тогда надо добавить еще елемент(ы), 
+            // чтобы получить значение больше 10
+            if(sum <= 10) { 
+                i++;
+                sum = sum + item;
+            }
+        });
+        if(sum > 10) {
+            console.log("Required Items = ", i);
+        } else {
+            console.log("Unable to complete task (using elements of this array)");
+        }
+
+        // Task 7
+        // Дан массив с числами. Оставьте в нем только положительные числа. 
+        // Затем извлеките квадратный корень и этих чисел.
+        console.log("Task 7:");
+        arr = [1, 2, 3, 4, -1, 56, 7];
+        // Отфильтровываем положительные элементы, извлекаем квадратные корни и помещаем их вместо исходных значений
+        result = arr.filter(item => item > 0).map(item => Math.sqrt(item));
+        console.log("Result = ", result);
+
+    </script>
+</body>
+</html>
