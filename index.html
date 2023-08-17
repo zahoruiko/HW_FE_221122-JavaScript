@@ -10,7 +10,7 @@
     <h3>The results are output to the console</h3>
     <script>
         // Task 1
-        // Дан массив с числами. Найдите сумму этих чисел, используя forEach.
+        // An array with numbers is given. Find the sum of these numbers using forEach.
         console.log("Task 1:");
         let arr = [1, 2, 3, 4, 56, 7];
         console.log("Source array = ", arr);
@@ -21,7 +21,7 @@
         console.log("Sum of the array elements = ", sum);
 
         // Task 2
-        // Дан массив с числами. Проверьте то, что все элементы в массиве больше нуля.
+        // An array with numbers is given. Check that all elements in the array are greater than zero.
         console.log("Task 2:");
         arr = [1, 2, -3, 4, -56, 7];
         console.log("Source array = ", arr);
@@ -33,7 +33,7 @@
         }
 
         // Task 3
-        //Дан массив со строками. Оставьте в нем только те строки, длина которых больше 5-ти символов.
+        // An array with strings is given. Leave only those lines in it that are longer than 5 characters.
         console.log("Task 3:");
         arr = ["asdfgadfg", "asfd", "asdfasdfasd", "dsfg"];
         console.log("Source array = ", arr);
@@ -41,7 +41,7 @@
         console.log("Result array = ", arr);
        
         // Task 4 
-        // Дан массив с числами. Посчитайте количество отрицательных чисел в этом массиве.
+        // An array with numbers is given. Count the number of negative numbers in this array.
         console.log("Task 4:");
         arr = [1, 2, -3, 4, -56, 7];
         console.log("Source array = ", arr);
@@ -49,16 +49,16 @@
         console.log("Number of negative elements = ", negativeElements.length);
 
         // Task 5
-        // Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, 
-        // чтобы в сумме получилось больше 10-ти.
+        // An array with numbers is given. Find out how many elements from the beginning 
+        // of the array you need to add up to get more than 10 in total.
         console.log("Task 5:");
         arr = [1, 2, 3, 4, -1, 56, 7];
         console.log("Source array = ", arr);
-        sum = 0; // переменная для расчета суммы
-        let i = 0; // переменная для счетчика элементов
+        sum = 0; // variable for calculating the amount
+        let i = 0; // variable for the element counter
         arr.forEach(item => {
-            // если сумма меньше или равна 10, тогда надо добавить еще елемент(ы), 
-            // чтобы получить значение больше 10
+            // if the sum is less than or equal to 10, then you need to add another element(s) 
+            // to get a value greater than 10
             if(sum <= 10) { 
                 i++;
                 sum = sum + item;
@@ -71,16 +71,16 @@
         }
 
         // Task 6
-        // Дан массив с числами. Узнайте сколько элементов с конца массива надо сложить, 
-        // чтобы в сумме получилось больше 10-ти.
+        // An array with numbers is given. Find out how many elements from the end 
+        // of the array you need to add up to get more than 10 in total.
         console.log("Task 6 (Var. 1):");
         arr = [1, 2, 3, 4, -1, 56, 7];
         console.log("Source array = ", arr);
-        sum = 0; // переменная для расчета суммы
-        i = 0; // переменная для счетчика элементов
+        sum = 0; // variable for calculating the amount
+        i = 0; // variable for the element counter
         result = arr.reduceRight((acc, item, index) => {
-            // если сумма меньше или равна 10, тогда надо добавить еще елемент(ы), 
-            // чтобы получить значение больше 10
+            // if the sum is less than or equal to 10, then you need to add another element(s) 
+            // to get a value greater than 10
             if(acc <= 10) { 
                 i++;
                 acc = acc + item;
@@ -96,12 +96,12 @@
         console.log("Task 6 (Var. 2):");
         arr = [1, 2, 3, 4, -1, 56, 7];
         console.log("Source array = ", arr);
-        arr.reverse(); // Реверсируем порядок элементов массива
-        sum = 0; // переменная для расчета суммы
-        i = 0; // переменная для счетчика элементов
+        arr.reverse(); // Reverse the order of the array elements
+        sum = 0; // variable for calculating the amount
+        i = 0; // variable for the element counter
         arr.forEach(item => {
-            // если сумма меньше или равна 10, тогда надо добавить еще елемент(ы), 
-            // чтобы получить значение больше 10
+            // if the sum is less than or equal to 10, then you need to add another element(s) 
+            // to get a value greater than 10
             if(sum <= 10) { 
                 i++;
                 sum = sum + item;
@@ -114,14 +114,14 @@
         }
 
         // Task 7
-        // Дан массив с числами. Оставьте в нем только положительные числа. 
-        // Затем извлеките квадратный корень и этих чисел.
+        // An array with numbers is given. Leave only positive numbers in it.
+        // Then extract the square root of these numbers as well.
         console.log("Task 7:");
         arr = [1, 2, 3, 4, -1, 56, 7];
-        // Отфильтровываем положительные элементы, извлекаем квадратные корни и помещаем их вместо исходных значений
+        // We filter out the positive elements, extract the square roots 
+        // and put them instead of the original values
         result = arr.filter(item => item > 0).map(item => Math.sqrt(item));
         console.log("Result = ", result);
-
     </script>
 </body>
 </html>
